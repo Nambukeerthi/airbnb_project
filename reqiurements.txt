@@ -1,0 +1,10 @@
+streamlit
+streamlit_option_menu
+pandas
+numba
+pip
+uv
+sqlalchemy
+plotly
+plotly.express
+numpy
