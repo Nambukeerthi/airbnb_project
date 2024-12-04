@@ -99,10 +99,9 @@ with st.sidebar:
     
     select = option_menu("Main menu",["HOME","ANALYSIS"])
     
-    
 if select == "HOME":
          
-st.markdown(" ")
+        st.markdown(" ")
         st.markdown(" ")
         st.markdown(" ")
         img1 = Image.open("airbnbdata/Airbnblogo.png")
