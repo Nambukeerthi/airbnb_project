@@ -14,7 +14,10 @@ st.set_page_config(
         page_icon="",
         layout = "wide"
     )
-df_csv = pd.read_csv("airbnb.csv")
+
+
+
+df_csv = pd.read_csv("airbnbdata/airbnb.csv")
 df=pd.DataFrame(df_csv)
 
 def func_all ():
