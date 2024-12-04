@@ -111,7 +111,7 @@ if select == "HOME":
         st.markdown(" ")
 
 elif select == "ANALYSIS":
-       list_neighbour = list(set(df["host_neighbourhood"]))
+        list_neighbour = list(set(df["host_neighbourhood"]))
         neighbourhood =  st.selectbox( "Select one", ["All"] + list_neighbour)
         if st.button("Submit"):
              if neighbourhood == "All":
