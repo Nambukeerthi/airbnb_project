@@ -105,7 +105,7 @@ if select == "HOME":
 st.markdown(" ")
         st.markdown(" ")
         st.markdown(" ")
-        img1 = Image.open("images/phonepe3.jpg")
+        img1 = Image.open("airbnbdata/Airbnblogo.png")
         st.image( img1,use_column_width=True,channels="RGB" )
         st.markdown(" ")
         st.markdown(" ")
