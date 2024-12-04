@@ -17,8 +17,8 @@ st.set_page_config(
 
 
 
-#df_csv = pd.read_csv("airbnbdata/airbnb.csv")
-#df=pd.DataFrame(df_csv)
+df_csv = pd.read_csv("airbnbdata/airbnb.csv")
+df=pd.DataFrame(df_csv)
 
 def func_all ():
     df_csv = pd.read_csv("airbnbdata/airbnb.csv")
