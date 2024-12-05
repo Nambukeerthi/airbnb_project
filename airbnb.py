@@ -23,12 +23,19 @@ df=pd.DataFrame(df_csv)
 def func_all ():
     df_csv = pd.read_csv("airbnbdata/airbnb.csv")
     df=pd.DataFrame(df_csv)
-    
+
+        
     #average, sum of reviews
     df_mean = df["number_of_reviews"].mean().sum()
     df_sum =  df["number_of_reviews"].sum()
-    st.write("average reviews",round(df_mean, 2))
-    st.write("sum of no of reviews",df_sum)
+    col1,col2 = st.columns(2)
+    with col1: 
+      st.subheader("Average Reviews")      
+      st.markdown(:blue-background[round(df_mean, 2)])      
+      #st.write("average reviews",round(df_mean, 2))
+    with col2:  
+      st.subheader("Sum of No of Reviews")      
+      st.markdown(:blue-background[df_sum])
     
     #count host neighbourhood
     list_neighbour = list(set(df["host_neighbourhood"]))
