@@ -126,7 +126,7 @@ if select == "HOME":
         st.markdown("**Messages**")
         st.markdown(":gray[Quickly message guests and support]")
         img3 = Image.open("airbnbdata/airbnbhouse.jpeg")
-        st.image( img3,use_column_width=True,channels="RGB" 
+        st.image( img3,use_column_width=True,channels="RGB" )
         st.write("click here to go [airbnb](https://www.airbnb.co.in/)")
 
 elif select == "ANALYSIS":
