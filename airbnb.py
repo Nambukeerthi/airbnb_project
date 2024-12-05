@@ -112,10 +112,13 @@ if select == "HOME":
         st.markdown(" ")
         st.markdown(" ")
         st.markdown(" ")
+        
         st.subheader("It’s easy to list your home on Airbnb")
         st.markdown("**Create a listing for your place in just a few steps**")
         st.markdown("**Go at your own pace, and make changes whenever**")
         st.markdown("**Get 1:1 support from experienced hosts at any time**")
+        st.markdown(" ")
+        
         img2 = Image.open("airbnbdata/airbnbmob.jpeg")
         st.image( img2,use_column_width=True,channels="RGB" )
         st.subheader("It’s easy to list your home on Airbnb")
@@ -125,6 +128,8 @@ if select == "HOME":
         st.markdown(":gray[Manage your availability and pricing]")
         st.markdown("**Messages**")
         st.markdown(":gray[Quickly message guests and support]")
+        st.markdown(" ")
+        
         img3 = Image.open("airbnbdata/airbnbhouse.jpeg")
         st.image( img3,use_column_width=True,channels="RGB" )
         st.write("click here to go [airbnb](https://www.airbnb.co.in/)")
