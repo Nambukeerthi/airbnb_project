@@ -120,7 +120,7 @@ if select == "HOME":
         st.markdown(" ")
         
         img2 = Image.open("airbnbdata/airbnbmob.jpeg")
-        st.image( img2,use_column_width=True,channels="RGB" )
+        st.image( img2,width=600,channels="RGB" )
         st.subheader("It’s easy to list your home on Airbnb")
         st.markdown("**Listing editor**")
         st.markdown(":gray[Showcase every detail of your home]")
