@@ -108,7 +108,7 @@ if select == "HOME":
         st.markdown(" ")
         st.markdown(" ")
         img1 = Image.open("airbnbdata/airbnblo.png")
-        st.image( img1,use_column_width=True,channels="RGB" )
+        st.image( img1,width=1200,channels="RGB" )
         st.markdown(" ")
         st.markdown(" ")
         st.markdown(" ")
@@ -131,7 +131,7 @@ if select == "HOME":
         st.markdown(" ")
         
         img3 = Image.open("airbnbdata/airbnbhouse.jpeg")
-        st.image( img3,use_column_width=True,channels="RGB" )
+        st.image( img3,width=600,channels="RGB" )
         st.write("click here to go [airbnb](https://www.airbnb.co.in/)")
 
 elif select == "ANALYSIS":
