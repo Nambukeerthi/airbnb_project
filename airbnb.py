@@ -31,7 +31,7 @@ def func_all ():
     col1,col2 = st.columns(2)
     with col1: 
       st.subheader("Average Reviews")      
-      st.markdown(:blue-background[round(df_mean, 2)])      
+      st.markdown(:blue-background[round(df_mean,2)])      
       #st.write("average reviews",round(df_mean, 2))
     with col2:  
       st.subheader("Sum of No of Reviews")      
