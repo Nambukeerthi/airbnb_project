@@ -35,7 +35,9 @@ def func_all ():
     with col2:  
       st.subheader("Total Reviews")      
       st.write(df_sum)
-    
+    col1.metric("avg",df_mean)
+
+        
     #count host neighbourhood
     list_neighbour = list(set(df["host_neighbourhood"]))
     df_count_neighbour =pd.Series(list_neighbour).value_counts().sum()
