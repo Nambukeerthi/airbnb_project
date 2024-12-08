@@ -36,8 +36,8 @@ def func_all ():
       st.subheader("Total Reviews")      
       # st.write(df_sum)
     
-    col1.metric(round(df_mean, 2))
-    col2.metric(df_sum)
+    col1.metric(" ",round(df_mean, 2))
+    col2.metric(" ",df_sum)
         
     #count host neighbourhood
     list_neighbour = list(set(df["host_neighbourhood"]))
