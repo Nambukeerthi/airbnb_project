@@ -42,13 +42,21 @@ def func_all ():
     #count host neighbourhood
     list_neighbour = list(set(df["host_neighbourhood"]))
     df_count_neighbour =pd.Series(list_neighbour).value_counts().sum()
-    st.write("count of neighbourhood",df_count_neighbour)
-    
+    #st.write("count of neighbourhood",df_count_neighbour)
     #count host id
     list_host_id = list(set(df["host_id"]))
     df_count_host_id =pd.Series(list_host_id).value_counts().sum()
-    st.write("count of host id",df_count_host_id)
-    
+    #st.write("count of host id",df_count_host_id)
+    col3,col4 = st.columns(2)
+    with col3: 
+      st.subheader("Host Neighbourhood Count")          
+    with col4:  
+      st.subheader("Host ID Count")      
+      
+    col1.metric("",df_count_neighbour)
+    col2.metric("",df_count_host_id)
+
+        
     #room type price
     room_types = df.groupby("room_type")[["price"]].sum()
     room_types.reset_index(inplace=True)
