@@ -30,18 +30,17 @@ def func_all ():
     df_sum =  df["number_of_reviews"].sum()
     col1,col2 = st.columns(2)
     with col1: 
-      st.subheader("Average Reviews")  
-      # st.write(round(df_mean, 2))       
+      st.subheader("Average Reviews")         
     with col2:  
       st.subheader("Total Reviews")      
-      # st.write(df_sum)
     
     col1.metric("",round(df_mean, 2))
     col2.metric("",df_sum)
         
     st.markdown(" ")
     st.markdown(" ")
-    st.markdown(" ")    
+    st.markdown(" ")  
+        
     #count host neighbourhood
     list_neighbour = list(set(df["host_neighbourhood"]))
     df_count_neighbour =pd.Series(list_neighbour).value_counts().sum()
@@ -49,7 +48,6 @@ def func_all ():
     #count host id
     list_host_id = list(set(df["host_id"]))
     df_count_host_id =pd.Series(list_host_id).value_counts().sum()
-    #st.write("count of host id",df_count_host_id)
     col3,col4 = st.columns(2)
     with col3: 
       st.subheader("Host Neighbourhood Count")          
@@ -65,13 +63,11 @@ def func_all ():
     st.markdown(" ")
     st.markdown(" ")
     st.markdown(" ") 
+        
     #room type price
     room_types = df.groupby("room_type")[["price"]].sum()
     room_types.reset_index(inplace=True)
     df_room_types = room_types   
-    #st.dataframe(df_room_types, use_container_width=True) 
-    #st.bar_chart(df_room_types.set_index('room_type'))
-    #df_price_roomtypes = pd.Series(list_neighbour).value_counts()
     
     #total room type price
     st.subheader("Total Price of Room Types")    
@@ -96,7 +92,6 @@ def func_all ():
     st.markdown(" ")
     st.markdown(" ")     
     st.bar_chart(avg_neighbour.set_index('host_neighbourhood'))
-    # styled_df = avg_neighbour_room_new.style.background_gradient(subset=['price'], cmap='coolwarm')
     
     #top host by total reviews
     st.subheader("Top 10 Reviews")    
@@ -117,7 +112,8 @@ def func_all ():
 
     st.markdown(" ")
     st.markdown(" ")
-    st.markdown(" ")      
+    st.markdown(" ")  
+        
     #cancelation policy 
     st.subheader("Cancelation Policy")     
     cancel_policy = df['cancellation_policy'].value_counts().reset_index()
@@ -128,7 +124,8 @@ def func_all ():
 
     st.markdown(" ")
     st.markdown(" ")
-    st.markdown(" ")     
+    st.markdown(" ")  
+        
     #bedrooms 
     st.subheader("Bedrooms Types")     
     bedrooms = df['bedrooms'].value_counts().reset_index()
@@ -139,6 +136,28 @@ def func_all ():
 
 def func_others(value):
     st.write(value)
+    df_csv = pd.read_csv("airbnbdata/airbnb.csv")
+    df=pd.DataFrame(df_csv)
+
+    filtered_df = df[df["host_neighbourhood"] == value]
+        
+    #average, sum of reviews
+    filtered_df_mean = filtered_df["number_of_reviews"].mean().sum()
+    filtered_df_sum =  filtered_df["number_of_reviews"].sum()
+    col1,col2 = st.columns(2)
+    with col1: 
+      st.subheader("Average Reviews")         
+    with col2:  
+      st.subheader("Total Reviews")      
+    
+    col1.metric("",round(df_mean, 2))
+    col2.metric("",df_sum)    
+
+
+
+
+
+
 
 # streamlit part
 st.title(" AIRBNB DATA ANALYSIS ")
