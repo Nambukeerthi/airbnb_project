@@ -82,6 +82,9 @@ def func_all ():
     tot_neighbour_room = tot_neighbour_room[cols]
     tot_neighbour_room_new = tot_neighbour_room.pivot(index='host_neighbourhood', columns='room_type', values='price')
     st.dataframe(tot_neighbour_room_new, use_container_width=True)
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ")    
     st.bar_chart(df_room_types.set_index('room_type'))
         
     #average price of neighbourhood
