@@ -180,7 +180,75 @@ def func_others(value):
     st.markdown(" ")
     st.markdown(" ") 
 
+    #room type price
+    filtered_room_types = filtered_df.groupby("room_type")[["price"]].sum()
+    filtered_room_types.reset_index(inplace=True)
+    filtered_df_room_types = filtered_room_types   
+    
+    #total room type price
+    st.subheader("Total Price of Room Types")    
+    filtered_tot_neighbour_room = filtered_df.groupby(["host_neighbourhood","room_type"])["price"].sum() 
+    filtered_tot_neighbour_room = filtered_tot_neighbour_room.reset_index()
+    cols = filtered_tot_neighbour_room.columns.tolist()
+    cols[0], cols[1] = cols[1], cols[0]  # Swap 'host_neighbourhood' and 'room_type'
+    filtered_tot_neighbour_room = filtered_tot_neighbour_room[cols]
+    filtered_tot_neighbour_room_new = filtered_tot_neighbour_room.pivot(index='host_neighbourhood', columns='room_type', values='price')
+    st.dataframe(filtered_tot_neighbour_room_new, use_container_width=True)
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ")    
+    st.bar_chart(filtered_df_room_types.set_index('room_type'))
+        
+    #average price of neighbourhood
+    st.subheader("Average Price of Host Neighbourhood")    
+    filtered_avg_neighbour = filtered_df.groupby("host_neighbourhood")[["price"]].mean() 
+    filtered_avg_neighbour.reset_index(inplace=True)
+    st.dataframe(filtered_avg_neighbour.head(10), use_container_width=True) 
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ")     
+    st.bar_chart(filtered_avg_neighbour.set_index('host_neighbourhood'))
+    
+    #top host by total reviews
+    st.subheader("Top 10 Reviews")    
+    filtered_review_group = filtered_df[['name','country','review_scores','number_of_reviews']]
+    filtered_review_group = filtered_review_group.reset_index(drop=True)
+    filtered_top_hotel_reviews = filtered_review_group.sort_values(by=['review_scores', 'number_of_reviews'], ascending=[False, False])
+    filtered_top_hotel_reviews = filtered_top_hotel_reviews.reset_index(drop=True)
+    filtered_top_hotel_reviews = filtered_top_hotel_reviews.rename(columns={
+    'name': 'Hotel Name', 
+    'review_scores': 'Review Scores', 
+    'number_of_reviews': 'Number of Reviews',
+    'country':'Country Name'})
+    st.dataframe(filtered_top_hotel_reviews.head(10), use_container_width=True)
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ")     
+    st.bar_chart(data=filtered_top_hotel_reviews.head(10),x='Hotel Name', y='Number of Reviews',horizontal=True,use_container_width=True)
 
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ")  
+        
+    #cancelation policy 
+    st.subheader("Cancelation Policy")     
+    filtered_cancel_policy = filtered_df['cancellation_policy'].value_counts().reset_index()
+    filtered_cancel_policy.columns = ['cancellation_policy', 'count']
+    st.dataframe(filtered_cancel_policy, use_container_width=True)
+    fig1 = px.pie(filtered_cancel_policy, values='count', names='cancellation_policy', title='Cancellation Policy')
+    st.plotly_chart(fig1)
+
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ")  
+        
+    #bedrooms 
+    st.subheader("Bedrooms Types")     
+    filtered_bedrooms = filtered_df['bedrooms'].value_counts().reset_index()
+    filtered_bedrooms.columns = ['bedrooms', 'count']
+    st.dataframe(filtered_bedrooms, use_container_width=True)
+    fig2 = px.pie(filtered_bedrooms, values='count', names='bedrooms', title='Bedrooms types ')
+    st.plotly_chart(fig2)
 
 
 # streamlit part
