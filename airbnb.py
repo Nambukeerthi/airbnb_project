@@ -158,8 +158,8 @@ def func_others(value):
     st.markdown(" ")
 
     #count host neighbourhood
-    list_neighbour = list(set(filtered_df["host_neighbourhood"]))
-    filtered_df_count_neighbour =pd.Series(list_neighbour).value_counts().sum()
+    filtered_list_neighbour = list(set(filtered_df["host_neighbourhood"]))
+    filtered_df_count_neighbour =pd.Series(filtered_list_neighbour).value_counts().sum()
     #st.write("count of neighbourhood",filtered_df_count_neighbour)
     #count host id
     filtered_list_host_id = list(set(filtered_df["host_id"]))
