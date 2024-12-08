@@ -135,7 +135,6 @@ def func_all ():
     st.plotly_chart(fig2)
 
 def func_others(value):
-    st.write(value)
     df_csv = pd.read_csv("airbnbdata/airbnb.csv")
     df=pd.DataFrame(df_csv)
 
