@@ -69,6 +69,7 @@ def func_all ():
     #df_price_roomtypes = pd.Series(list_neighbour).value_counts()
     
     #total room type price
+    st.subheadder("Total Room Type Prices")    
     tot_neighbour_room = df.groupby(["host_neighbourhood","room_type"])["price"].sum() 
     tot_neighbour_room = tot_neighbour_room.reset_index()
     cols = tot_neighbour_room.columns.tolist()
