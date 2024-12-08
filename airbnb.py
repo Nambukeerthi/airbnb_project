@@ -39,6 +39,9 @@ def func_all ():
     col1.metric("",round(df_mean, 2))
     col2.metric("",df_sum)
         
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ")    
     #count host neighbourhood
     list_neighbour = list(set(df["host_neighbourhood"]))
     df_count_neighbour =pd.Series(list_neighbour).value_counts().sum()
