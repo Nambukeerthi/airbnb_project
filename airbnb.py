@@ -53,8 +53,8 @@ def func_all ():
     with col4:  
       st.subheader("Host ID Count")      
       
-    col1.metric("",df_count_neighbour)
-    col2.metric("",df_count_host_id)
+    col3.metric("",df_count_neighbour)
+    col4.metric("",df_count_host_id)
 
         
     #room type price
