@@ -63,11 +63,21 @@ def func_all ():
     #room type price
     room_types = df.groupby("room_type")[["price"]].sum()
     room_types.reset_index(inplace=True)
-    df_room_types = room_types
-    st.dataframe(df_room_types, use_container_width=True) 
-    st.bar_chart(df_room_types.set_index('room_type'))
+    df_room_types = room_types   
+    #st.dataframe(df_room_types, use_container_width=True) 
+    #st.bar_chart(df_room_types.set_index('room_type'))
     #df_price_roomtypes = pd.Series(list_neighbour).value_counts()
     
+    #total room type price
+    tot_neighbour_room = df.groupby(["host_neighbourhood","room_type"])["price"].sum() 
+    tot_neighbour_room = tot_neighbour_room.reset_index()
+    cols = tot_neighbour_room.columns.tolist()
+    cols[0], cols[1] = cols[1], cols[0]  # Swap 'host_neighbourhood' and 'room_type'
+    tot_neighbour_room = tot_neighbour_room[cols]
+    tot_neighbour_room_new = tot_neighbour_room.pivot(index='host_neighbourhood', columns='room_type', values='price')
+    st.dataframe(tot_neighbour_room_new, use_container_width=True)
+    st.bar_chart(df_room_types.set_index('room_type'))
+        
     #average price of neighbourhood
     avg_neighbour = df.groupby("host_neighbourhood")[["price"]].mean() 
     avg_neighbour.reset_index(inplace=True)
