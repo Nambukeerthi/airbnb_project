@@ -150,8 +150,8 @@ def func_others(value):
     with col2:  
       st.subheader("Total Reviews")      
     
-    col1.metric("",round(df_mean, 2))
-    col2.metric("",df_sum)    
+    col1.metric("",round(filtered_df_mean, 2))
+    col2.metric("",filtered_df_sum)    
 
 
 
