@@ -31,12 +31,12 @@ def func_all ():
     col1,col2 = st.columns(2)
     with col1: 
       st.subheader("Average Reviews")  
-      st.write(round(df_mean, 2))       
+      # st.write(round(df_mean, 2))       
     with col2:  
       st.subheader("Total Reviews")      
-      st.write(df_sum)
-    col1.metric("avg",round(df_mean, 2))
-
+      # st.write(df_sum)
+    col1.metric(round(df_mean, 2))
+    col2.metric(df_sum)
         
     #count host neighbourhood
     list_neighbour = list(set(df["host_neighbourhood"]))
