@@ -59,7 +59,12 @@ def func_all ():
     col3.metric("",df_count_neighbour)
     col4.metric("",df_count_host_id)
 
-        
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ") 
+    st.markdown(" ")
+    st.markdown(" ")
+    st.markdown(" ") 
     #room type price
     room_types = df.groupby("room_type")[["price"]].sum()
     room_types.reset_index(inplace=True)
