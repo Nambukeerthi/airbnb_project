@@ -163,7 +163,7 @@ def func_others(value):
     #st.write("count of neighbourhood",filtered_df_count_neighbour)
     #count host id
     filtered_list_host_id = list(set(filtered_df["host_id"]))
-    filtered_df_count_host_id =pd.Series(list_host_id).value_counts().sum()
+    filtered_df_count_host_id =pd.Series(filtered_list_host_id).value_counts().sum()
     col3,col4 = st.columns(2)
     with col3: 
       st.subheader("Host Neighbourhood Count")          
