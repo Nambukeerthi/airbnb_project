@@ -290,7 +290,7 @@ if select == "HOME":
         
         img3 = Image.open("airbnbdata/airbnbhouse.jpeg")
         st.image( img3,width=600,channels="RGB" )
-        st.write("PROJECT GITHUB PAGE (https://github.com/Nambukeerthi/airbnb_project/)")
+        st.markdown("[PROJECT GITHUB PAGE](https://github.com/Nambukeerthi/airbnb_project/)")
 
 elif select == "ANALYSIS":
         list_neighbour = list(set(df["host_neighbourhood"]))
