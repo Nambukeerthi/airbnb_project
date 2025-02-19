@@ -20,16 +20,15 @@ Video Link: [Linked-IN Video](https://www.linkedin.com/posts/keerthi-r-9b8839283
 Portfolio: [Nambu Keerthi](https://portfolio-b5zieg8xn5nhwau5b4bhp8.streamlit.app/)
 
 ## Introduction 
-The purpose of this project is to create an intuitive Streamlit app that pulls data about a YouTube channel from the Google API, stores it in a MongoDB database, moves it to a SQL data warehouse, and then lets users perform searches for channel details and join tables to view the data.
+This project aims to analyze Airbnb data using MongoDB Atlas, perform data cleaning and preparation, develop interactive geospatial visualizations, and create dynamic plots to gain insights into pricing variations, availability patterns, and location-based trends in the Airbnb marketplace.
 
-
+Domain: Travel Industry, Property Management and Tourism
 
 ## Technologies Applied
-* virtual environment (.venv)
-* python
-* streamlit 
-* Youtube Api 
-* AWS RDS Database
+* Python
+* Streamlit 
+* Pymongo 
+* Plotly
 * MySQL
 
 
