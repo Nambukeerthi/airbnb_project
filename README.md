@@ -50,17 +50,17 @@ db = client["sample_airbnb"]
 coll = db["listingsAndReviews"]
 
 ```
-4. after getting that all dataset, we need to cleaning and preprocessing that. the next step is merge from all dataset to one single dataset.  
+4. After getting that all dataset, we need to cleaning and preprocessing that. the next step is merge from all dataset to one single dataset.  
 ```
 df_merge_1 = pd.merge(df1_copy,df_host_2, on = "_id")
 df_merge_2 = pd.merge(df_merge_1,df_address_1, on = "_id")
 df_merge_3 = pd.merge(df_merge_2,df_available_1, on = "_id")
 df_merge_4 = pd.merge(df_merge_3,df_amenities, on = "_id")
 ```
-5. the next step is create barchat, pie chat for easy visualization and quick understanding by using python code.
+5. The next step is create barchat, pie chat for easy visualization and quick understanding by using python code.
 
  
-6. create streamlit app. And run it 
+6. Create streamlit app. And run it 
 ```
 streamlit run airbnb.py
 ```
