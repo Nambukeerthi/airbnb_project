@@ -22,14 +22,14 @@ Portfolio: [Nambu Keerthi](https://portfolio-b5zieg8xn5nhwau5b4bhp8.streamlit.ap
 ## Introduction 
 This project aims to analyze Airbnb data using MongoDB Atlas, perform data cleaning and preparation, develop interactive geospatial visualizations, and create dynamic plots to gain insights into pricing variations, availability patterns, and location-based trends in the Airbnb marketplace.
 
-#Domain: *Travel Industry, Property Management and Tourism*
+Domain: *Travel Industry, Property Management and Tourism*
 
 ## Technologies Applied
 * Python
 * Streamlit 
 * Pymongo 
 * Plotly
-* MySQL
+* Pandas
 
 
 ## Project Setup
@@ -38,38 +38,48 @@ This project aims to analyze Airbnb data using MongoDB Atlas, perform data clean
 pip install -r requirements.txt
 ```
 
-2. Now one need setup a Google Cloud Project on Google Cloud Console, and then enable the Youtube API v3, after that generate the credentials and copy the api_key. Now below is the Python code to use that API.
+2. Now one need to create mangoDB account for get data from that.
 ```
-youtube = build('youtube', 'v3', developerKey="your api_key goes here")
-```
-
-3. After that one need to create a MySQL Database in there local system. Now below is the Python code to connect to that SQL Database
-```
-hostname = "your host name goes here"
-database = "your database name goes here"
-username = "your username goes here"
-pwd = "your password goes here"
-
-mydb = sql.connect(host=hostname, user=username, password=pwd, database=database)
-                   
-cursor1 = mydb.cursor()
+mongodb+srv://nambu935:<db_password>@keerthi.i2brs.mongodb.net/?retryWrites=true&w=majority&appName=Keerthi
 ```
 
-4. To run the application
+3. After that we need to connect mangoDB in there local system. Now below is the Python code to connect to that mangodb
 ```
-streamlit run main.py
+client = pymongo.MongoClient("mongodb+srv://nambu935:nambukeerthi@keerthi.i2brs.mongodb.net/?retryWrites=true&w=majority&appName=Keerthi")
+db = client["sample_airbnb"]
+coll = db["listingsAndReviews"]
+
+```
+4. after getting that all dataset, we need to cleaning and preprocessing that. the next step is merge from all dataset to one single dataset.  
+```
+df_merge_1 = pd.merge(df1_copy,df_host_2, on = "_id")
+df_merge_2 = pd.merge(df_merge_1,df_address_1, on = "_id")
+df_merge_3 = pd.merge(df_merge_2,df_available_1, on = "_id")
+df_merge_4 = pd.merge(df_merge_3,df_amenities, on = "_id")
+```
+5. the next step is create barchat, pie chat for easy visualization and quick understanding by using python code.
+
+ 
+6. create streamlit app. And run it 
+```
+streamlit run airbnb.py
 ```
 
    
 ## Project Methodology
 
-1. First click the "Create DB" button after that the database will created
+1. Create a connection to the MongoDB Atlas database and initiate the process of retrieving the Airbnb dataset from it.
 
-2. Enter a YouTube channel ID in the input field and click the "Details" button. The channel details will then be displayed. After that, click the "Upload" button to upload channel details such as Channel ID, Channel Name, Playlist ID, Subscribers, Views, Total Videos, 
-   Description, and more, to the SQL database.
+2. Prepare the Airbnb dataset for exploratory data analysis (EDA) and visualization tasks by first addressing missing values, eliminating duplicates, and making appropriate data type transformations
 
-3. Now from the sidebar select the Task Menu and Select the required statement.
+3. This critical data preprocessing step is essential for maintaining data integrity and consistency, ensuring that the dataset is in an optimal state for further analysis.
 
-3. According to the selected statement the data will be queried from the SQL Database and will be displayed here on the screen in the streamlit application
+4. Create a web application using Streamlit that harnesses geospatial information from the Airbnb dataset to generate interactive maps, allowing users to explore and engage with location-based data related to Airbnb listings and properties.
 
-4. through the click the "Drob DB" button the created database and details will droped.
+5. This application will empower users to visualize and interact with the geographical aspects of Airbnb data, enhancing their understanding of property distribution, pricing trends, and other relevant insights within a map-centric interface.
+
+6. Utilize the refined dataset to conduct an analysis and generate visual representations showcasing the fluctuations in prices across various geographical locations, types of properties, and seasons.
+
+7. Develop interactive graphs and charts that empower users to investigate pricing trends, identify outliers, and discern correlations with other factors.
+
+   
