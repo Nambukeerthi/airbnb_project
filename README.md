@@ -22,7 +22,7 @@ Portfolio: [Nambu Keerthi](https://portfolio-b5zieg8xn5nhwau5b4bhp8.streamlit.ap
 ## Introduction 
 This project aims to analyze Airbnb data using MongoDB Atlas, perform data cleaning and preparation, develop interactive geospatial visualizations, and create dynamic plots to gain insights into pricing variations, availability patterns, and location-based trends in the Airbnb marketplace.
 
-Domain: *Travel Industry, Property Management and Tourism*
+**Domain** : *Travel Industry, Property Management and Tourism*
 
 ## Technologies Applied
 * Python
