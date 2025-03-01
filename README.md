@@ -15,7 +15,7 @@
   <a href="#Technologies Applied"></a>  
 </p>
 
-Video Link: [Linked-IN Video](https://www.linkedin.com/posts/keerthi-r-9b8839283_project-name-airbnb-analysis-project-website-activity-7296602704175321088-TPVE?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEUARVwBltI0ri4ApeK7YzcbHxGViaHfWEM)
+Video Link: [Linked-IN Video](https://www.linkedin.com/posts/nambu-keerthi-r-9b8839283_project-name-airbnb-analysis-project-website-activity-7296602704175321088-_W57?utm_source=share&utm_medium=member_android&rcm=ACoAABMFg5wB3AA0b9CHRbG1E_77kFaZB8cVz7c)
 
 Portfolio: [Nambu Keerthi](https://portfolio-b5zieg8xn5nhwau5b4bhp8.streamlit.app/)
 
